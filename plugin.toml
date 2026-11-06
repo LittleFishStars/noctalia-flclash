@@ -1,0 +1,147 @@
+# ══════════════════════════════════════════════════════════════════════════
+# ylxc/flclash —— FlClash / mihomo 流量显示与控制面板（状态栏组件 + 详情面板）
+#
+# 数据全部来自 mihomo（Clash Meta）外部控制器 REST API，只读为主，
+# 仅在用户明确操作时才发起写请求（切换节点 / 切模式 / 断开连接）：
+#   bar.luau   栏组件：实时上下行速率（/traffic 流）、连接数、模式
+#   panel.luau 面板：流量曲线 + 模式切换 + 分组选节点 + 测速 + 连接管理
+#   lib/flclash.luau  共用的 API 客户端、解析、派生指标与格式化
+#
+# 本地校验：noctalia plugins lint ~/.local/share/noctalia/plugins/ylxc-flclash
+# ══════════════════════════════════════════════════════════════════════════
+
+author = "ylxc"
+id = "ylxc/flclash"
+name = "FlClash"
+description = "Shows FlClash / mihomo live traffic in the bar, with a control panel for modes, proxy groups, delay tests and connections."
+license = "MIT"
+version = "1.0.0"
+plugin_api = 26
+icon = "world"
+dependencies = []
+tags = ["network", "proxy", "clash", "bar", "panel"]
+
+# ── 插件级设置：栏组件与面板共用 ────────────────────────────────────────────
+
+[[setting]]
+key = "controller_url"
+type = "string"
+default = "http://127.0.0.1:9090"
+label_key = "settings.controller_url.label"
+description_key = "settings.controller_url.description"
+
+[[setting]]
+key = "controller_secret"
+type = "string"
+default = ""
+label_key = "settings.controller_secret.label"
+description_key = "settings.controller_secret.description"
+
+[[setting]]
+key = "refresh_seconds"
+type = "int"
+default = 3
+min = 1
+max = 30
+label_key = "settings.refresh_seconds.label"
+description_key = "settings.refresh_seconds.description"
+
+[[setting]]
+key = "history_seconds"
+type = "int"
+default = 60
+min = 15
+max = 300
+label_key = "settings.history_seconds.label"
+description_key = "settings.history_seconds.description"
+
+[[setting]]
+key = "test_url"
+type = "string"
+default = "http://www.gstatic.com/generate_204"
+label_key = "settings.test_url.label"
+description_key = "settings.test_url.description"
+
+[[setting]]
+key = "test_timeout_ms"
+type = "int"
+default = 5000
+min = 1000
+max = 15000
+label_key = "settings.test_timeout_ms.label"
+description_key = "settings.test_timeout_ms.description"
+
+[[setting]]
+key = "max_conns"
+type = "int"
+default = 24
+min = 4
+max = 200
+label_key = "settings.max_conns.label"
+description_key = "settings.max_conns.description"
+
+[[setting]]
+key = "show_hidden"
+type = "bool"
+default = false
+label_key = "settings.show_hidden.label"
+description_key = "settings.show_hidden.description"
+
+# ── 栏组件 ──────────────────────────────────────────────────────────────────
+
+[[widget]]
+id = "traffic"
+entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "display"
+  type = "select"
+  default = "speed"
+  label_key = "settings.display.label"
+  description_key = "settings.display.description"
+  options = [
+    { value = "speed", label_key = "opt_speed" },
+    { value = "down", label_key = "opt_down" },
+    { value = "up", label_key = "opt_up" },
+    { value = "total", label_key = "opt_total" },
+    { value = "conns", label_key = "opt_conns" },
+    { value = "mode", label_key = "opt_mode" }
+  ]
+
+  [[widget.setting]]
+  key = "glyph"
+  type = "glyph"
+  default = "world"
+  label_key = "settings.glyph.label"
+  description_key = "settings.glyph.description"
+
+  [[widget.setting]]
+  key = "show_glyph"
+  type = "bool"
+  default = true
+  label_key = "settings.show_glyph.label"
+  description_key = "settings.show_glyph.description"
+
+  [[widget.setting]]
+  key = "hide_when_off"
+  type = "bool"
+  default = false
+  label_key = "settings.hide_when_off.label"
+  description_key = "settings.hide_when_off.description"
+
+  # 手势默认值；用户可在设置里的组件手势中改绑或改成 none
+  # 右键故意不在此绑定：按宿主规则，一旦有绑定（哪怕 "none"）就会盖掉
+  # bar.luau 里的 onRightClick，右键重连流量流会失效。要改绑在设置里改。
+  [widget.actions]
+  left = "panel-toggle ylxc/flclash:panel"
+  middle = "settings-open-widget"
+
+# ── 控制面板 ────────────────────────────────────────────────────────────────
+
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 480
+height = 640
+placement = "floating"
+position = "center"

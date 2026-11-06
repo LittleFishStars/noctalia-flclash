@@ -1,0 +1,119 @@
+{
+  "action_failed": "操作失败",
+  "bar_off": "未连接",
+  "close_all": "断开全部连接",
+  "close_conn": "断开连接",
+  "delay_timeout": "超时",
+  "delay_title": "延迟测速",
+  "flush_fakeip": "清除 fake-ip",
+  "flush_ok": "fake-ip 缓存已清除",
+  "flush_title": "清除 fake-ip",
+  "lan_hint": "局域网设备可通过本机代理端口上网",
+  "lan_title": "允许局域网",
+  "level_off": "未连接",
+  "level_ok": "运行中",
+  "mode_direct": "直连",
+  "mode_global": "全局",
+  "mode_rule": "规则",
+  "mode_title": "切换模式",
+  "opt_conns": "连接数",
+  "opt_down": "仅下行速率",
+  "opt_mode": "当前模式",
+  "opt_speed": "上下行速率",
+  "opt_total": "累计流量",
+  "opt_up": "仅上行速率",
+  "panel_collapse": "收起",
+  "panel_conns": "活动连接",
+  "panel_conns_toggle": "点击展开或收起连接列表",
+  "panel_endpoint": "控制器",
+  "panel_expand_more": "展开其余 %d 个",
+  "panel_groups": "代理分组",
+  "panel_groups_unavailable": "分组读取失败，请检查控制器。",
+  "panel_loading": "正在连接外部控制器…",
+  "panel_more": "还有 %d 条…",
+  "panel_no_conns": "当前没有活动连接。",
+  "panel_no_groups": "没有可见分组。",
+  "panel_no_nodes": "该分组没有节点。",
+  "panel_no_secret": "未配置密钥：在插件设置里填入 FlClash 的外部控制器密钥。",
+  "panel_offline": "外部控制器不可达",
+  "panel_offline_hint": "确认 FlClash 正在运行，且外部控制器地址与密钥和设置一致。",
+  "panel_partial": "部分接口请求失败",
+  "panel_refresh": "重新读取",
+  "panel_retry": "重试",
+  "panel_show": "展开",
+  "panel_total": "累计",
+  "panel_updated": "更新于 %s",
+  "panel_updated_short": "更新于",
+  "readonly_group_body": "该分组由策略自动选择，点击节点无效果",
+  "readonly_group_title": "自动分组",
+  "select_failed": "切换节点",
+  "select_hint": "切换到 %s",
+  "settings": {
+    "controller_secret": {
+      "description": "FlClash「外部控制器密钥」，留空则不带鉴权头。",
+      "label": "外部控制器密钥"
+    },
+    "controller_url": {
+      "description": "FlClash 外部控制器的地址，默认 http://127.0.0.1:9090。",
+      "label": "控制器地址"
+    },
+    "display": {
+      "description": "栏组件上显示哪一项。",
+      "label": "显示内容"
+    },
+    "glyph": {
+      "description": "栏组件使用的图标。",
+      "label": "图标"
+    },
+    "hide_when_off": {
+      "description": "控制器失联时把整块组件从栏上收起。",
+      "label": "失联时隐藏"
+    },
+    "history_seconds": {
+      "description": "速率曲线保留的秒数，越长越平滑。",
+      "label": "曲线窗口（秒）"
+    },
+    "max_conns": {
+      "description": "面板连接列表最多显示多少条（按速率排序）。",
+      "label": "连接列表条数"
+    },
+    "refresh_seconds": {
+      "description": "连接与配置的轮询间隔；速率来自 /traffic 流，不受此项影响。",
+      "label": "刷新间隔（秒）"
+    },
+    "show_glyph": {
+      "description": "关掉后只保留文字。",
+      "label": "显示图标"
+    },
+    "show_hidden": {
+      "description": "显示 FlClash 里被隐藏的代理分组。",
+      "label": "显示隐藏分组"
+    },
+    "test_timeout_ms": {
+      "description": "测速等待响应的超时。",
+      "label": "测速超时（毫秒）"
+    },
+    "test_url": {
+      "description": "延迟测速使用的 URL，默认 gstatic 204。",
+      "label": "测速地址"
+    }
+  },
+  "test_group": "整组测速",
+  "testing": "测速中…",
+  "tt_conns": "连接",
+  "tt_exit": "主出口",
+  "tt_hint": "左键：控制面板 · 右键：重连流量流",
+  "tt_hint_key": "提示",
+  "tt_memory": "内存",
+  "tt_mode": "模式",
+  "tt_speed": "速率",
+  "tt_status": "状态",
+  "tt_total": "累计",
+  "tun_hint": "接管全局流量（FlClash 的虚拟网卡）",
+  "tun_title": "TUN 模式",
+  "type_fallback": "回退",
+  "type_loadbalance": "负载均衡",
+  "type_relay": "链式",
+  "type_selector": "选择器",
+  "type_urltest": "自动测速"
+}

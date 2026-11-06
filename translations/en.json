@@ -1,0 +1,119 @@
+{
+  "action_failed": "Action failed",
+  "bar_off": "offline",
+  "close_all": "Close all connections",
+  "close_conn": "Close connection",
+  "delay_timeout": "timeout",
+  "delay_title": "Delay test",
+  "flush_fakeip": "Flush fake-ip",
+  "flush_ok": "fake-ip cache flushed",
+  "flush_title": "Flush fake-ip",
+  "lan_hint": "LAN devices can use the local proxy port",
+  "lan_title": "Allow LAN",
+  "level_off": "offline",
+  "level_ok": "running",
+  "mode_direct": "Direct",
+  "mode_global": "Global",
+  "mode_rule": "Rule",
+  "mode_title": "Switch mode",
+  "opt_conns": "Connections",
+  "opt_down": "Download speed",
+  "opt_mode": "Current mode",
+  "opt_speed": "Up & down speed",
+  "opt_total": "Total traffic",
+  "opt_up": "Upload speed",
+  "panel_collapse": "Collapse",
+  "panel_conns": "Connections",
+  "panel_conns_toggle": "Click to expand or collapse the connection list",
+  "panel_endpoint": "Controller",
+  "panel_expand_more": "Show %d more",
+  "panel_groups": "Proxy groups",
+  "panel_groups_unavailable": "Failed to load groups; check the controller.",
+  "panel_loading": "Connecting to the controller…",
+  "panel_more": "%d more…",
+  "panel_no_conns": "No active connections.",
+  "panel_no_groups": "No visible groups.",
+  "panel_no_nodes": "This group has no nodes.",
+  "panel_no_secret": "No secret configured: set the FlClash external controller secret in plugin settings.",
+  "panel_offline": "External controller unreachable",
+  "panel_offline_hint": "Make sure FlClash is running and the controller address and secret match the settings.",
+  "panel_partial": "Some requests failed",
+  "panel_refresh": "Refresh",
+  "panel_retry": "Retry",
+  "panel_show": "Expand",
+  "panel_total": "Total",
+  "panel_updated": "Updated at %s",
+  "panel_updated_short": "Updated",
+  "readonly_group_body": "This group is chosen by its policy; tapping nodes has no effect",
+  "readonly_group_title": "Auto group",
+  "select_failed": "Switch node",
+  "select_hint": "Switch to %s",
+  "settings": {
+    "controller_secret": {
+      "description": "FlClash's external controller secret; leave empty for no auth header.",
+      "label": "Controller secret"
+    },
+    "controller_url": {
+      "description": "FlClash external controller URL, default http://127.0.0.1:9090.",
+      "label": "Controller URL"
+    },
+    "display": {
+      "description": "What the bar widget shows.",
+      "label": "Display"
+    },
+    "glyph": {
+      "description": "Icon used by the bar widget.",
+      "label": "Icon"
+    },
+    "hide_when_off": {
+      "description": "Hide the whole widget from the bar while the controller is offline.",
+      "label": "Hide when offline"
+    },
+    "history_seconds": {
+      "description": "Seconds kept by the speed graph; longer means smoother.",
+      "label": "Graph window (s)"
+    },
+    "max_conns": {
+      "description": "Max rows in the panel connection list (sorted by speed).",
+      "label": "Connection rows"
+    },
+    "refresh_seconds": {
+      "description": "Polling interval for connections and configs; speed comes from the /traffic stream instead.",
+      "label": "Refresh interval (s)"
+    },
+    "show_glyph": {
+      "description": "Turn off to keep text only.",
+      "label": "Show icon"
+    },
+    "show_hidden": {
+      "description": "Show proxy groups hidden in FlClash.",
+      "label": "Show hidden groups"
+    },
+    "test_timeout_ms": {
+      "description": "Timeout for delay tests.",
+      "label": "Test timeout (ms)"
+    },
+    "test_url": {
+      "description": "URL used for delay tests, default gstatic 204.",
+      "label": "Test URL"
+    }
+  },
+  "test_group": "Test group",
+  "testing": "Testing…",
+  "tt_conns": "Conns",
+  "tt_exit": "Main exit",
+  "tt_hint": "Left click: panel · Right click: reconnect traffic stream",
+  "tt_hint_key": "Hint",
+  "tt_memory": "Memory",
+  "tt_mode": "Mode",
+  "tt_speed": "Speed",
+  "tt_status": "Status",
+  "tt_total": "Total",
+  "tun_hint": "Take over all traffic via FlClash's virtual NIC",
+  "tun_title": "TUN mode",
+  "type_fallback": "Fallback",
+  "type_loadbalance": "Load balance",
+  "type_relay": "Relay",
+  "type_selector": "Selector",
+  "type_urltest": "URL test"
+}
