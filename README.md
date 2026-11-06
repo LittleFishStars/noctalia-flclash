@@ -61,8 +61,8 @@ noctalia plugins lint ~/.local/share/noctalia/plugins/ylxc-flclash
 bash tests/run.sh
 ```
 
-`tests/run.sh` 共三组：`lib`（API 客户端与派生逻辑，86 项断言）、
-`panel`（面板渲染链与交互冒烟，36 项）、`bar`（栏文本与状态，5 项）。
+`tests/run.sh` 共三组 128 项断言：`lib`（API 客户端与派生逻辑，86 项）、
+`panel`（面板渲染链与交互冒烟，37 项）、`bar`（栏文本与状态，5 项）。
 拼接执行的原因见 `tests/env.luau` 顶部注释（luau CLI 的 require 与 io 限制）。
 
 ## 已知边界
